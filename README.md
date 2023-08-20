@@ -32,3 +32,12 @@ npx hardhat run --network localhost scripts/deploy.js
 ```
 
 3. **Frontend**: Frontend has been made using Next.js. The frontend helps us connect with the **Metamask wallet**. After establishing the connection, we can see the **Deposit** and **Withdraw** interface. Just enter the desired amount in the textbox and click **Deposit** or **Withdraw**, it will redirect you to Metamask wallet for confirmation, after verifying the transaction, the amount will be transferred and the balance will be updated in the frontend.
+
+To run the frontend
+
+```
+npm run dev
+```
+
+  Navdeep
+  Metacrafters Student
