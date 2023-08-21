@@ -141,32 +141,6 @@ export default function HomePage() {
           header {
             padding: 120px;
           }
-
-          // h1 {
-          //   font-family: "Arial", serif;
-          //   font-size: 70px;
-          //   margin-bottom: 20px;
-          //   font-weight: 700
-          // }
-
-          // p {
-          //   font-size: 22px;
-          //   margin-bottom: 20px;
-          //   font-weight: 700
-          // }
-
-          // button {
-          //   background-color: #4caf50;
-          //   color: #fff;
-          //   border: none;
-          //   padding: 20px 30px;
-          //   font-size: 20px;
-          //   cursor: pointer;
-          // }
-
-          // button:hover {
-          //   cursor: pointer;
-          // }
         `}
       </style>
     </main>
