@@ -1,43 +1,50 @@
-# Integrating Frontend with a Smart Contract
+# Smart Contract Management-ETH+  AVAX
+It is a React component that allows users to interact with an Ethereum smart contract called `EtherCalculator`. It enables users to connect their MetaMask wallet, `check their balance`, `deposit funds`, and `withdraw funds`. The code utilizes the ethers.js library to interact with the Ethereum blockchain.
+## Description
+The code defines a React component named App, which contains the logic and UI for the application. It imports the necessary dependencies, including the CSS file, ethers.js library, and the JSON file of the smart contract ABI.  
 
+The component initializes state variables using the `useState` hook to manage the user's balance, deposit amount, and withdrawal amount. It also uses the `useEffect` hook to call the `connectWallet` function when the component mounts. The connectWallet function checks for the presence of the MetaMask extension, enables it, and establishes a connection with the user's wallet. It retrieves the user's balance from the smart contract and updates the state.  
 
-This project is part of the **Metacrafters ETH+AVAX Proof** course.
-
-In this project, we had to integrate Frontend with a Smart Contract
-
-To get the project dependencies, run this command in the project root folder
-
+The component defines two functions, `handleDeposit` and `handleWithdraw`, to handle the deposit and withdrawal actions respectively. These functions interact with the EtherCalculator smart contract using ethers.js.
+## Geting Started
+### Installation
+**Step 1:** First, make the clone of the respository by using following command.          +
 ```
+git clone https://github.com/lavanishchaudhary/Smart-Contract-Management---ETH-AVAX.git
+```
+
+**Step 2:** Open your terminal or command prompt and navigate to the directory where you want to create your project.
+
+**Step 3:** After the project is created, navigate to the project directory.       
+
+**Step 4:** Install all required dependencies
+### Executing program
+ **Step 1:** Go to root directory. In terminal, run the following command to install project dependencies.
+ ```
 npm i
 ```
 
-### The project consists of three parts
-
-1. **Hardhat local blockchain**: Hardhat allows us to create a local blockchain with demo accounts, where we can deploy our smart contract, and interact with it.
-
-To initialize a local blockchain environment:
-
+**Step 2:** Set up a local blockchain network by using this command.
 ```
 npx hardhat node
 ```
 
-We have to add this local network to our **Metamask Wallet** in order to access it.
-
-2. **Smart Contract Deployment**: Once the blockchain environment is live, we can deploy our smart contract using a deploy script. The deploy script compiles the smart contract and passes the initial value to the constructor, and deploys the contract to the blockchain. We can get address of the smart contract by using the reference variable assigned while loading the contract.
-
-To deploy the contract
-
+**Step 3:** Deploy smart contracts to the local Ethereum network.
 ```
-npx hardhat run --network localhost scripts/deploy.js
+npx hardhat run scripts/deploy.js --network localhost
 ```
 
-3. **Frontend**: Frontend has been made using Next.js. The frontend helps us connect with the **Metamask wallet**. After establishing the connection, we can see the **Deposit** and **Withdraw** interface. Just enter the desired amount in the textbox and click **Deposit** or **Withdraw**, it will redirect you to Metamask wallet for confirmation, after verifying the transaction, the amount will be transferred and the balance will be updated in the frontend.
+**Step 4:** Update contract address.           
 
-To run the frontend
-
+**Step 5:** Go to frontend directory. Install the project dependencies and start development server.
 ```
-npm run dev
+npm i
 ```
-
-  Navdeep
-  Metacrafters Student
+```
+npm start
+```
+## Authors
+Metacrafter Student   
+Navdeep
+## License
+This project is licensed under the MIT License.
