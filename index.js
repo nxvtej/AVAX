@@ -10,7 +10,9 @@ export default function HomePage() {
   const [balance, setBalance] = useState(undefined);
   const [transactionHistory, setTransactionHistory] = useState([]);
   const [depositAmount, setDepositAmount] = useState(1); // Default deposit amount is 1
-  const [withdrawAmount, setWithdrawAmount] = useState(1); // Default withdraw amount is 1
+  const [donateAmont, setdonateAmont] = useState(1); // Default withdraw amount is 1
+
+  // const [transferHash , setTransferHash] = userState(null);
   const [ethBalance, setEthBalance] = useState(undefined);
 
   const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
@@ -75,14 +77,18 @@ export default function HomePage() {
     }
   };
 
-  const withdraw = async () => {
+  const donate = async () => {
     if (Avengersfunding) {
-      let tx = await Avengersfunding.withdraw(ethers.utils.parseEther(withdrawAmount.toString()));
+      let recieverAddress ="0x70997970C51812dc3A010C7d01b50e0d17dc79C8";
+      // let transferAmount = e.target.sendAmount.value;
+
+      let tx = await Avengersfunding.donate(ethers.utils.parseEther(donateAmont.toString()),recieverAddress);
       await tx.wait();
       getBalance();
-      addTransactionToHistory("Withdraw", -withdrawAmount);
-    }
-  };
+      addTransactionToHistory("Donation ", -donateAmont);
+    
+  }};
+
 
   const addTransactionToHistory = (type, amount) => {
     const transaction = {
@@ -111,6 +117,8 @@ export default function HomePage() {
       </div>
     );
   };
+
+   
 
   useEffect(() => {
     getWallet();
@@ -154,12 +162,12 @@ export default function HomePage() {
           <div className={styles.buttonGroup}>
             <input
               type="number"
-              value={withdrawAmount}
-              onChange={(e) => setWithdrawAmount(parseFloat(e.target.value))}
+              value={donateAmont}
+              onChange={(e) => setdonateAmont(parseFloat(e.target.value))}
               className={styles.input}
             />
-            <button onClick={withdraw} className={styles.button}>
-              Withdraw ETH
+            <button onClick={donate} className={styles.button}>
+              Donate ETH
             </button>
           </div>
         </div>
